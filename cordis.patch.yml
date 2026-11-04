@@ -1,0 +1,13 @@
+# dsh-local-sd bundle patch — mounts the local Stable Diffusion bridge.
+#
+# 装法：
+#   dsh plugin --profile <name> add https://github.com/<you>/dsh-local-sd
+# 或本地开发：
+#   cd <profile> && pnpm add file:<本包目录>
+# 然后把 "dsh-local-sd" 加进 profile package.json 的 dsh.profile.bundles。
+#
+# 浏览器半（设置 → 本地绘图）由 dsh-client-modules 通过 package.json 的
+# dsh.client 声明 + exports["./client"] 自动编入，无需在此声明。
+- insert:
+    - id: local-sd
+      name: 'dsh-local-sd'

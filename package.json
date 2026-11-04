@@ -1,0 +1,53 @@
+{
+  "name": "dsh-local-sd",
+  "version": "0.4.1",
+  "description": "本地 Stable Diffusion 桥接插件：在「设置 → 本地绘图」里选一下 WebUI / Forge 目录就能用，注册 generate_image_local / generate_image_batch / sd_backend_status / sd_backend_control 四个工具，把本机 sdapi 后端直接接到模型手上。完全本地、零内容过滤、断网可用、后端按需启停。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test-local-sd.mjs"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "stable-diffusion",
+    "sdapi",
+    "forge",
+    "a1111",
+    "koboldcpp",
+    "image-generation",
+    "local",
+    "uncensored",
+    "nsfw"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1 || ^4.0.5",
+    "react": "^18.2.0"
+  }
+}
