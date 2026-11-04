@@ -147,7 +147,7 @@ koboldcpp.exe --sdmodel <image-model.gguf> --sdoffloadcpu --sdtiledvae 512 --por
 
 ## 生命周期：按需启动，闲置自关
 
-SD 后端吃几 GB 显存，不该一直挂着。
+SD 后端占用较高显存，闲置时自动关闭。
 
 ```
 你第一次要图
