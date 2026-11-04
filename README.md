@@ -1,5 +1,9 @@
 # dsh-local-sd — 本地 Stable Diffusion 桥接插件
 
+[![npm version](https://img.shields.io/npm/v/dsh-local-sd.svg)](https://www.npmjs.com/package/dsh-local-sd)
+[![license](https://img.shields.io/npm/l/dsh-local-sd.svg)](LICENSE)
+[![node](https://img.shields.io/node/v/dsh-local-sd.svg)](package.json)
+
 在 DSH 里一句话画图：模型把中文需求翻成 Danbooru 标签，直接调用你本机的 Stable Diffusion 出图，**图在对话里显示**。
 
 全程本地：不联网、不经过任何托管 API、**没有任何内容过滤**。提示词原样送进采样器。
@@ -30,17 +34,30 @@
 ## 安装
 
 ```bash
-dsh plugin --profile desktop add <包来源>
+# 从 npm 装（推荐）
+dsh plugin --profile desktop add dsh-local-sd
+
+# 或者从 GitHub 装
+dsh plugin --profile desktop add https://github.com/VanYe666/dsh-local-sd
 ```
 
 包来源可以是：
 
 | 方式 | 写法 |
 |---|---|
-| GitHub 仓库 | `https://github.com/<you>/dsh-local-sd` |
 | npm 包 | `dsh-local-sd` |
+| GitHub 仓库 | `https://github.com/VanYe666/dsh-local-sd` |
 | 本地 tgz | `file:C:\path\to\dsh-local-sd-0.4.1.tgz` |
 | 本地源码目录（开发） | `file:D:\path\to\dsh-local-sd` |
+
+不想用 `dsh plugin` 的话，直接在 profile 目录里 pnpm：
+
+```bash
+cd %USERPROFILE%\.dsh\profiles\desktop
+pnpm add dsh-local-sd
+```
+
+然后把 `"dsh-local-sd"` 加进 `package.json` 的 `dsh.profile.bundles` 数组。
 
 装完重启 DSH。
 
