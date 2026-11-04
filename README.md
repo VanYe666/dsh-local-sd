@@ -186,6 +186,18 @@ SD 后端占用较高显存，闲置时自动关闭。
 
 配置写在 `$DSH_HOME/local-sd.json`（Windows 是 `C:\Users\<你>\.dsh\local-sd.json`）。**每次调用都重新读取**，改完不用重启 DSH；手改这个 JSON 也一样有效。
 
+### 启动进度和命令行输出
+
+后端启动时**不再弹出黑色控制台窗口**，进度和输出都搬到设置页里：
+
+- **进度条**：读绘图程序自己的输出（加载扩展、加载权重、起 API），大致对应当前阶段；没有新输出时会缓慢爬升，不会看起来卡死。
+- **查看命令行输出**：展开后就是绘图程序真实打印的内容，出错时能看到完整的 traceback，不用再手动跑一遍 `run.bat` 找原因。
+- 日志同时写在 `$DSH_HOME/local-sd-startup.log`，每次启动覆盖。
+
+> **`--nowebui` 必须配 `--port`**：Forge 在 `--nowebui` 下如果没指定端口会默认绑 **7861**
+> （`webui.py` 里 `port=cmd_opts.port if cmd_opts.port else 7861`），而插件默认找 7860。
+> 想在后台只跑 API 不弹网页，启动参数要写 `--api --nowebui --port 7860`。
+
 ---
 
 ## 用法

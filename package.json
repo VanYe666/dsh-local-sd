@@ -1,6 +1,6 @@
 {
   "name": "dsh-local-sd",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "本地 Stable Diffusion 桥接插件：在「设置 → 本地绘图」里选一下 WebUI / Forge 目录就能用，注册 generate_image_local / generate_image_batch / sd_backend_status / sd_backend_control 四个工具，把本机 sdapi 后端直接接到模型手上。完全本地、零内容过滤、断网可用、后端按需启停。",
   "type": "module",
   "main": "lib/index.js",
