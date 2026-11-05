@@ -49,7 +49,7 @@ dsh plugin --profile desktop add https://github.com/VanYe666/dsh-local-sd
 |---|---|
 | npm 包 | `dsh-local-sd` |
 | GitHub 仓库 | `https://github.com/VanYe666/dsh-local-sd` |
-| 本地 tgz | `file:C:\path\to\dsh-local-sd-0.4.1.tgz` |
+| 本地 tgz | `file:C:\path\to\dsh-local-sd-0.7.0.tgz` |
 | 本地源码目录（开发） | `file:D:\path\to\dsh-local-sd` |
 
 不想用 `dsh plugin` 的话，直接在 profile 目录里 pnpm：
